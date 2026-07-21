@@ -14,25 +14,10 @@ export default function Paliativos() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <PhotoSlot
-              alt="Manos de un cuidador acompañando con calidez a un paciente"
+              src="/images/manos-acompanamiento.jpg"
+              alt="Primer plano de las manos entrelazadas de una persona mayor, apoyadas sobre su regazo"
+              sizes="(max-width: 1024px) 92vw, 46vw"
               className="aspect-16/10 w-full rounded-[2rem]"
-              illustration={
-                <svg
-                  viewBox="0 0 160 100"
-                  className="h-full max-h-52 w-full max-w-sm"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.6}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M32 62c-6-4-10-9-10-15a9 9 0 0 1 17-4 9 9 0 0 1 17 4c0 6-4 11-10 15" />
-                  <path d="M46 62c8 2 14 6 18 11" />
-                  <path d="M118 34c8 0 14 6 14 14 0 12-14 22-30 30-16-8-30-18-30-30 0-8 6-14 14-14 7 0 12 4 16 9 4-5 9-9 16-9Z" />
-                  <path d="M12 88h136" opacity="0.4" />
-                </svg>
-              }
             />
           </Reveal>
 

@@ -67,13 +67,15 @@ export default function Hero() {
 
           <Reveal delay={120} className="relative">
             <PhotoSlot
-              alt="Cuidadora de Helfen acompañando a una persona mayor en su casa"
+              src="/images/cuidadora-acompanando-en-casa.jpg"
+              alt="Una cuidadora ayuda a levantarse a una mujer mayor que usa andador, en el living de su casa"
               priority
+              sizes="(max-width: 1024px) 92vw, 46vw"
               className="aspect-4/5 w-full rounded-[2rem] shadow-[0_24px_60px_-30px_rgba(18,80,122,0.45)] sm:aspect-square lg:aspect-4/5"
             />
 
             {/* Tarjeta de confianza superpuesta */}
-            <div className="mx-auto -mt-12 w-[92%] rounded-2xl border border-line bg-white p-5 shadow-lg sm:absolute sm:-bottom-8 sm:-left-6 sm:mt-0 sm:w-72">
+            <div className="mx-auto -mt-12 w-[92%] rounded-2xl border border-line bg-white p-5 shadow-lg sm:absolute sm:-bottom-10 sm:-left-12 sm:mt-0 sm:w-72">
               <p className="text-sm font-semibold tracking-wide text-teal-500 uppercase">
                 Habilitaciones oficiales
               </p>

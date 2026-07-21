@@ -1,5 +1,6 @@
 import { Section, Eyebrow, SectionTitle, Lead, Card } from "../ui";
 import { IconShield, IconUsers, IconSparkle, IconHeart, IconCheck } from "../icons";
+import PhotoSlot from "../PhotoSlot";
 import Reveal from "../Reveal";
 
 const valores = [
@@ -63,20 +64,31 @@ export default function Nosotros() {
       </div>
 
       <Reveal delay={120}>
-        <div className="mt-16 rounded-3xl border border-line bg-surface p-8 sm:p-12">
-          <h3 className="text-2xl font-semibold sm:text-3xl">Nuestro compromiso</h3>
-          <p className="mt-3 max-w-2xl text-ink-soft">
-            Lo que toda familia puede esperar de un prestador de Helfen, sin
-            excepciones.
-          </p>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {compromiso.map((c) => (
-              <li key={c} className="flex gap-3.5">
-                <IconCheck className="mt-1 size-5 shrink-0 text-teal-500" />
-                <span className="text-ink-soft">{c}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-16 grid items-center gap-10 rounded-3xl border border-line bg-surface p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+          <PhotoSlot
+            src="/images/familia-en-casa.jpg"
+            alt="Una acompañante y un hombre mayor miran juntos un álbum de fotos sentados en el living"
+            sizes="(max-width: 1024px) 88vw, 38vw"
+            className="aspect-4/3 w-full rounded-2xl"
+          />
+
+          <div>
+            <h3 className="text-2xl font-semibold sm:text-3xl">
+              Nuestro compromiso
+            </h3>
+            <p className="mt-3 text-ink-soft">
+              Lo que toda familia puede esperar de un prestador de Helfen, sin
+              excepciones.
+            </p>
+            <ul className="mt-8 grid gap-4">
+              {compromiso.map((c) => (
+                <li key={c} className="flex gap-3.5">
+                  <IconCheck className="mt-1 size-5 shrink-0 text-teal-500" />
+                  <span className="text-ink-soft">{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Reveal>
     </Section>

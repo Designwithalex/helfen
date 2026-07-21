@@ -71,18 +71,29 @@ formulario, metadata y datos estructurados.
 El WhatsApp está configurado en **+54 9 11 3299-0001** →
 `https://wa.me/5491132990001` con mensaje prellenado.
 
-### Agregar las fotos definitivas
+### Fotografía
 
-El sitio se entrega sin fotografías: donde van, se muestra una composición de marca
-(degradé + ilustración lineal), nunca un placeholder roto.
+El sitio usa tres fotos de stock de Unsplash (licencia libre, uso comercial permitido),
+elegidas por ser cálidas y domésticas en vez de clínicas:
 
-1. Dejar las imágenes optimizadas en `public/images/`.
-2. Pasar `src="/images/archivo.jpg"` al componente `PhotoSlot` (ver `Hero.tsx` y
-   `Paliativos.tsx`) — internamente usa `next/image`.
-3. Para los retratos de testimonios, completar el campo `foto` en el array de
-   `src/components/sections/Testimonios.tsx`.
+| Archivo | Ubicación | Autor |
+|---|---|---|
+| `cuidadora-acompanando-en-casa.jpg` | Hero | Age Cymru — *Unsplash License* |
+| `familia-en-casa.jpg` | Sobre nosotros → Nuestro compromiso | Centre for Ageing Better — *dominio público + Unsplash License* |
+| `manos-acompanamiento.jpg` | Cuidados paliativos | Danie Franco — *Unsplash License* |
+
+**Para reemplazarlas por fotos propias de Helfen** (recomendado apenas estén
+disponibles): dejar el archivo en `public/images/` y cambiar el `src` del
+componente `PhotoSlot` en la sección correspondiente. `PhotoSlot` usa `next/image`
+y, si se le quita el `src`, vuelve solo a una composición de marca (degradé +
+ilustración lineal) en vez de romperse.
 
 Mantener siempre un `alt` descriptivo en español.
+
+**Testimonios:** los retratos son monogramas (iniciales sobre degradé), no fotos de
+stock — usar la cara de un desconocido para representar a Fernando Burgos, Patricia
+García o Alejandro Vidal sería una falsificación. Cuando haya retratos reales,
+completar el campo `foto` en el array de `src/components/sections/Testimonios.tsx`.
 
 ### Formulario de contacto
 
