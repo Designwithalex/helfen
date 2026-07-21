@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Helfen — Design tokens
+   Brand: teal primary, deep-blue gradient, white dominant.
+   Audiencia: adultos mayores y familiares → tipografía grande,
+   contraste alto (WCAG AA+), cero ruido visual.
+   ========================================================= */
+
+@theme {
+  /* Brand — teal */
+  --color-teal-50: #f1f7f7;
+  --color-teal-100: #dcebec;
+  --color-teal-200: #bcd9da;
+  --color-teal-300: #93c0c2;
+  --color-teal-400: #5c9ea1;
+  --color-teal-500: #4a8b8e;
+  --color-teal-600: #3d7376;
+  --color-teal-700: #345d60;
+  --color-teal-800: #2d4d4f;
+  --color-teal-900: #274143;
+
+  /* Brand — deep blue (secciones destacadas / footer) */
+  --color-ocean-50: #eef6fb;
+  --color-ocean-100: #d6e9f4;
+  --color-ocean-200: #b0d4ea;
+  --color-ocean-300: #7cb8dc;
+  --color-ocean-400: #2e86ab;
+  --color-ocean-500: #226e91;
+  --color-ocean-600: #12507a;
+  --color-ocean-700: #0f4265;
+  --color-ocean-800: #0d3652;
+  --color-ocean-900: #0b2c43;
+
+  /* Neutrales */
+  --color-ink: #2a3133;
+  --color-ink-soft: #55616a;
+  --color-line: #e3ebec;
+  --color-surface: #f7fafa;
+
+  /* Tipografía */
+  --font-display: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset para anclas bajo el header fijo */
+    scroll-padding-top: 6.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    /* Base 17px: legibilidad para adultos mayores */
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-teal-900);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Foco visible y consistente en todo el sitio */
+  :focus-visible {
+    outline: 3px solid var(--color-teal-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-teal-200);
+    color: var(--color-teal-900);
+  }
+}
+
+@layer components {
+  /* Reveal on scroll — mejora progresiva.
+     Sin JS o con reduced-motion el contenido queda visible. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.5s var(--ease-soft),
+      transform 0.5s var(--ease-soft);
+  }
+
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
