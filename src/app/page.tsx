@@ -1,13 +1,9 @@
 import Hero from "@/components/sections/Hero";
-import Servicio from "@/components/sections/Servicio";
 import Beneficios from "@/components/sections/Beneficios";
 import Niveles from "@/components/sections/Niveles";
-import Modalidades from "@/components/sections/Modalidades";
 import ValorAgregado from "@/components/sections/ValorAgregado";
 import HelfenView from "@/components/sections/HelfenView";
-import Nosotros from "@/components/sections/Nosotros";
 import Paliativos from "@/components/sections/Paliativos";
-import Testimonios from "@/components/sections/Testimonios";
 import ComoElegir from "@/components/sections/ComoElegir";
 import Contacto from "@/components/sections/Contacto";
 import { site, habilitaciones } from "@/lib/site";
@@ -46,15 +42,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <Servicio />
       <Beneficios />
       <Niveles />
-      <Modalidades />
       <ValorAgregado />
       <HelfenView />
-      <Nosotros />
       <Paliativos />
-      <Testimonios />
       <ComoElegir />
       <Contacto />
     </>

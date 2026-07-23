@@ -20,7 +20,7 @@ const sourceSans = Source_Sans_3({
   weight: ["400", "500", "600", "700"],
 });
 
-const titulo = "Helfen | Cuidados e internación domiciliaria en CABA";
+const titulo = "Helfen | Cuidados especiales en salud en CABA";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: [
     "cuidados domiciliarios",
-    "internación domiciliaria CABA",
+    "cuidados especiales en salud CABA",
     "enfermería a domicilio",
     "acompañante terapéutico",
     "cuidadores de adultos mayores",

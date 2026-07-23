@@ -28,7 +28,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-              Cuidados e internación domiciliaria con el mismo estándar
+              Cuidados especiales en salud con el mismo estándar
               profesional de un centro de salud. Para niños, adultos, personas
               mayores y personas con discapacidad, en el lugar donde mejor se
               sienten.

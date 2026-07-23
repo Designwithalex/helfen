@@ -9,7 +9,7 @@ export const site = {
   tagline: "Global Class Caregiving",
   url: "https://cuidadosespecialesensalud.com",
   description:
-    "Cuidados e internación domiciliaria en CABA y GBA: enfermería profesional, acompañamiento terapéutico, cuidadores y cuidados paliativos. Empresa habilitada por el Ministerio de Salud de la Nación.",
+    "Cuidados especiales en salud en CABA y GBA: enfermería profesional, acompañamiento terapéutico, cuidadores y cuidados paliativos. Empresa habilitada por el Ministerio de Salud de la Nación.",
   address: {
     street: "Enrique Santos Discépolo 1859, Piso 2",
     locality: "Ciudad Autónoma de Buenos Aires",
@@ -51,8 +51,6 @@ export const habilitaciones = [
 
 export const nav = [
   { label: "Servicios", href: "#servicios" },
-  { label: "Sobre Nosotros", href: "#nosotros" },
-  { label: "Testimonios", href: "#testimonios" },
   { label: "Cómo Elegirnos", href: "#como-elegir" },
   { label: "Contacto", href: "#contacto" },
 ] as const;

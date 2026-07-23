@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <Logo tone="light" />
             <p className="mt-6 max-w-sm leading-relaxed">
-              Cuidados e internación domiciliaria con estándares profesionales en
+              Cuidados especiales en salud con estándares profesionales en
               CABA y Gran Buenos Aires.
             </p>
             <a

@@ -35,7 +35,7 @@ export default function Beneficios() {
         <Reveal className="max-w-3xl">
           <Eyebrow tone="light">Beneficios</Eyebrow>
           <SectionTitle id="beneficios-titulo" tone="light">
-            Por qué la internación domiciliaria cambia la experiencia
+            Por qué los cuidados especiales en salud cambian la experiencia
           </SectionTitle>
           <Lead tone="light" className="mt-6">
             El hogar no es solo un lugar más cómodo: es un factor concreto en la

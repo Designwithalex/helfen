@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
 export const alt =
-  "Helfen — Cuidados e internación domiciliaria en Buenos Aires";
+  "Helfen — Cuidados especiales en salud en Buenos Aires";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,7 +54,7 @@ export default function Image() {
 
         <div style={{ display: "flex", flexDirection: "column", fontSize: 26 }}>
           <div style={{ color: "#D6E9F4" }}>
-            Cuidados e internación domiciliaria · CABA y GBA
+            Cuidados especiales en salud · CABA y GBA
           </div>
           <div style={{ color: "#7CB8DC", fontSize: 22, marginTop: 10 }}>
             {`WhatsApp ${site.whatsapp.display} · Tel. ${site.phone.display}`}

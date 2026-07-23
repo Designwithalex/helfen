@@ -56,7 +56,7 @@ const niveles = [
 
 export default function Niveles() {
   return (
-    <Section labelledBy="niveles-titulo" className="bg-surface">
+    <Section id="servicios" labelledBy="niveles-titulo" className="bg-surface">
       <Reveal className="max-w-3xl">
         <Eyebrow>Niveles de atención</Eyebrow>
         <SectionTitle id="niveles-titulo">
