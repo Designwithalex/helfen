@@ -18,7 +18,7 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: "linear-gradient(135deg, #0D3652 0%, #12507A 55%, #3D7376 100%)",
+          background: "linear-gradient(135deg, #01A5D9 0%, #018AC1 50%, #005596 100%)",
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
@@ -32,7 +32,7 @@ export default function Image() {
               fontSize: 22,
               letterSpacing: 6,
               textTransform: "uppercase",
-              color: "#B0D4EA",
+              color: "#D5EEFA",
               marginTop: 8,
             }}
           >
@@ -53,10 +53,10 @@ export default function Image() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", fontSize: 26 }}>
-          <div style={{ color: "#D6E9F4" }}>
+          <div style={{ color: "#EEF8FD" }}>
             Cuidados especiales en salud · CABA y GBA
           </div>
-          <div style={{ color: "#7CB8DC", fontSize: 22, marginTop: 10 }}>
+          <div style={{ color: "#A9DCF4", fontSize: 22, marginTop: 10 }}>
             {`WhatsApp ${site.whatsapp.display} · Tel. ${site.phone.display}`}
           </div>
         </div>

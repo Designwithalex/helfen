@@ -33,10 +33,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open
-          ? "border-b border-line bg-white/95 backdrop-blur-md"
-          : "border-b border-transparent bg-white/80 backdrop-blur-sm"
+      className={`fixed inset-x-0 top-0 z-50 transition-shadow duration-300 ${
+        scrolled || open ? "bg-brand-gradient shadow-md" : "bg-brand-gradient"
       }`}
     >
       <Container>
@@ -56,7 +54,7 @@ export default function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="inline-flex cursor-pointer items-center rounded-full px-4 py-2.5 text-[0.9375rem] font-medium text-ink-soft transition-colors duration-200 hover:bg-teal-50 hover:text-teal-700"
+                    className="inline-flex cursor-pointer items-center rounded-full px-4 py-2.5 text-[0.9375rem] font-medium text-white transition-colors duration-200 hover:bg-white/15"
                   >
                     {item.label}
                   </a>
@@ -70,10 +68,10 @@ export default function Header() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden cursor-pointer items-center gap-2.5 rounded-full bg-teal-600 px-6 py-3 text-[0.9375rem] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-teal-700 hover:shadow-md md:inline-flex"
+              className="hidden cursor-pointer items-center gap-2.5 rounded-full bg-white px-6 py-3 text-[0.9375rem] font-semibold text-brand-700 shadow-sm transition-all duration-200 hover:bg-brand-50 hover:shadow-md md:inline-flex"
             >
               <IconWhatsApp className="size-5" />
-              Solicitar una entrevista
+              Escribinos por WhatsApp
             </a>
 
             <button
@@ -82,7 +80,7 @@ export default function Header() {
               aria-expanded={open}
               aria-controls="menu-movil"
               aria-label={open ? "Cerrar menú" : "Abrir menú"}
-              className="inline-flex size-12 cursor-pointer items-center justify-center rounded-xl text-teal-800 transition-colors duration-200 hover:bg-teal-50 lg:hidden"
+              className="inline-flex size-12 cursor-pointer items-center justify-center rounded-xl text-white transition-colors duration-200 hover:bg-white/15 lg:hidden"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -108,7 +106,7 @@ export default function Header() {
       <div
         id="menu-movil"
         hidden={!open}
-        className="border-t border-line bg-white lg:hidden"
+        className="border-t border-white/20 bg-brand-700 lg:hidden"
       >
         <Container className="py-6">
           <ul className="flex flex-col gap-1">
@@ -117,7 +115,7 @@ export default function Header() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block cursor-pointer rounded-xl px-4 py-4 text-lg font-medium text-teal-900 transition-colors duration-200 hover:bg-teal-50"
+                  className="block cursor-pointer rounded-xl px-4 py-4 text-lg font-medium text-white transition-colors duration-200 hover:bg-white/15"
                 >
                   {item.label}
                 </a>
@@ -129,10 +127,10 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-5 inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-teal-600 px-6 py-4 text-base font-semibold text-white"
+            className="mt-5 inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-white px-6 py-4 text-base font-semibold text-brand-700"
           >
             <IconWhatsApp className="size-5" />
-            Solicitar una entrevista
+            Escribinos por WhatsApp
           </a>
         </Container>
       </div>

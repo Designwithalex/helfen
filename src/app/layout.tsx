@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5C9EA1",
+  themeColor: "#018AC1",
   width: "device-width",
   initialScale: 1,
 };
@@ -70,7 +70,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col bg-white">
         <a
           href="#contenido"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-full focus:bg-teal-600 focus:px-6 focus:py-3 focus:font-semibold focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-full focus:bg-brand-700 focus:px-6 focus:py-3 focus:font-semibold focus:text-white"
         >
           Saltar al contenido
         </a>

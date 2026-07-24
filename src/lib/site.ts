@@ -7,9 +7,9 @@ export const site = {
   name: "Helfen",
   legalName: "Cuidados Especiales en Salud S.A.",
   tagline: "Global Class Caregiving",
-  url: "https://cuidadosespecialesensalud.com",
+  url: "https://helfensalud.com",
   description:
-    "Cuidados especiales en salud en CABA y GBA: enfermería profesional, acompañamiento terapéutico, cuidadores y cuidados paliativos. Empresa habilitada por el Ministerio de Salud de la Nación.",
+    "Cuidados e internación domiciliaria en CABA y GBA: enfermería profesional, acompañamiento terapéutico, cuidadores y cuidados paliativos. Empresa habilitada por el Ministerio de Salud de la Nación.",
   address: {
     street: "Enrique Santos Discépolo 1859, Piso 2",
     locality: "Ciudad Autónoma de Buenos Aires",
@@ -17,7 +17,7 @@ export const site = {
     country: "Argentina",
   },
   phone: {
-    display: "54 11 6019.1111",
+    display: "+54 11 6019 1111",
     href: "tel:+541160191111",
   },
   whatsapp: {
@@ -41,7 +41,7 @@ export const habilitaciones = [
   },
   {
     entidad: "Gobierno de la Ciudad de Buenos Aires",
-    detalle: "Disposición N° 2943/2016",
+    detalle: "Habilitación — Disposición N° 2943/2016",
   },
   {
     entidad: "Registro Nacional de Prestadores",
@@ -50,7 +50,8 @@ export const habilitaciones = [
 ] as const;
 
 export const nav = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Cómo Elegirnos", href: "#como-elegir" },
+  { label: "Cuidados", href: "#internacion-domiciliaria" },
+  { label: "Valores", href: "#valores" },
+  { label: "Método", href: "#metodo" },
   { label: "Contacto", href: "#contacto" },
 ] as const;

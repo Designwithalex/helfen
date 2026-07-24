@@ -7,6 +7,10 @@ Landing de una sola página (one-pager con anclas), estática, orientada a famil
 consultan desde el celular en un momento sensible: tipografía grande, contraste alto,
 cero ruido visual y contacto por WhatsApp siempre a un toque.
 
+El contenido y el lenguaje visual replican el **brochure institucional** de Helfen:
+bloques de color con texto blanco, tarjetas de borde fino, íconos de línea y mucho aire
+vertical. La identidad es **azul** (`#018AC1` / `#01A5D9` / `#005596`).
+
 ---
 
 ## Stack
@@ -56,31 +60,53 @@ src/
 │  ├─ icons.tsx         # set de íconos lineales propios (SVG, sin dependencias)
 │  ├─ PhotoSlot.tsx     # espacio reservado para fotografía
 │  ├─ Reveal.tsx        # aparición al hacer scroll (mejora progresiva)
-│  ├─ ui.tsx            # primitivas: Container, Section, Eyebrow, ButtonLink, Card…
+│  ├─ ui.tsx            # primitivas: Container, Section, BlockHeading, ButtonLink, Card…
 │  └─ sections/         # una sección de la home por archivo
+│     ├─ Hero.tsx          # portada: logo, claim y sello de habilitaciones
+│     ├─ Intro.tsx         # cuidados e internación domiciliaria
+│     ├─ Beneficios.tsx    # 4 beneficios de la internación domiciliaria
+│     ├─ Valores.tsx       # integridad · respeto · compromiso · cuidado
+│     ├─ Metodo.tsx        # capacitación permanente + cuidado integral
+│     └─ Contacto.tsx      # contacto mínimo (WhatsApp, teléfono, email)
 └─ lib/
-   └─ site.ts           # ⭐ datos de contacto, habilitaciones y navegación
+   ├─ site.ts           # ⭐ datos de contacto, habilitaciones y navegación
+   └─ content.ts        # ⭐ copy institucional — transcripción textual del brochure
 ```
+
+### Editar textos
+
+El copy institucional es **verbatim del brochure** y vive en
+**`src/lib/content.ts`**. No editarlo sin validar contra el PDF.
+
+Ese archivo conserva además el copy de las **secciones retiradas** del sitio
+(niveles de atención, grilla de servicios, tecnología / Helfen View® y cuidados
+paliativos), agrupado bajo el comentario *"Secciones retiradas"*. Está transcrito
+para poder reponer cualquiera de ellas sin volver al PDF: alcanza con crear el
+componente en `src/components/sections/`, sumarlo a `src/app/page.tsx` y, si
+necesita ancla, agregarla a `nav` en `src/lib/site.ts`.
 
 ### Cambiar datos de contacto
 
 Todo (teléfono, WhatsApp, email, dirección, habilitaciones, menú) sale de
 **`src/lib/site.ts`**. Al editar ese archivo se actualizan header, footer, CTAs,
-formulario, metadata y datos estructurados.
+metadata y datos estructurados.
+
+La dirección postal ya no se muestra en el sitio; se conserva en `site.ts` porque
+alimenta el JSON-LD de `MedicalBusiness` (SEO local).
 
 El WhatsApp está configurado en **+54 9 11 3299-0001** →
 `https://wa.me/5491132990001` con mensaje prellenado.
 
 ### Fotografía
 
-El sitio usa tres fotos de stock de Unsplash (licencia libre, uso comercial permitido),
-elegidas por ser cálidas y domésticas en vez de clínicas:
+El sitio usa dos fotos de stock de Unsplash (Unsplash License: uso comercial
+permitido, sin atribución obligatoria), elegidas por ser cálidas y domésticas en vez
+de clínicas.
 
 | Archivo | Ubicación | Autor |
 |---|---|---|
-| `cuidadora-acompanando-en-casa.jpg` | Hero | Age Cymru — *Unsplash License* |
-| `familia-en-casa.jpg` | Sobre nosotros → Nuestro compromiso | Centre for Ageing Better — *dominio público + Unsplash License* |
-| `manos-acompanamiento.jpg` | Cuidados paliativos | Danie Franco — *Unsplash License* |
+| `cuidadora-acompanando-en-casa.jpg` | Hero (fondo, bajo el degradé) | Age Cymru |
+| `familia-en-casa.jpg` | Cuidados e internación domiciliaria | Centre for Ageing Better |
 
 **Para reemplazarlas por fotos propias de Helfen** (recomendado apenas estén
 disponibles): dejar el archivo en `public/images/` y cambiar el `src` del
@@ -90,26 +116,25 @@ ilustración lineal) en vez de romperse.
 
 Mantener siempre un `alt` descriptivo en español.
 
-**Testimonios:** los retratos son monogramas (iniciales sobre degradé), no fotos de
-stock — usar la cara de un desconocido para representar a Fernando Burgos, Patricia
-García o Alejandro Vidal sería una falsificación. Cuando haya retratos reales,
-completar el campo `foto` en el array de `src/components/sections/Testimonios.tsx`.
+### Logo
 
-### Formulario de contacto
-
-Al no haber backend, el formulario valida en el cliente, arma un mensaje ordenado
-y lo abre en WhatsApp, con `mailto:` como alternativa visible.
-Si más adelante se agrega un endpoint, reemplazar `handleSubmit` en
-`src/components/sections/Contacto.tsx` por un `fetch`.
+`public/logo-helfen-blanco.png` es el símbolo institucional en blanco sobre
+transparente — la única variante disponible. Por eso el lockup (símbolo +
+"Helfen" + claim) se usa siempre sobre fondo azul: header, hero y footer.
+Si aparece una variante en color, agregarla y extender `src/components/Logo.tsx`.
 
 ---
 
 ## Accesibilidad y performance
 
 - Contraste verificado contra **WCAG 2.1 AA** (texto ≥ 4.5:1, elementos de UI ≥ 3:1).
+- **Dos degradés de marca** (ver `globals.css`): el degradé original
+  (`#01A5D9 → #018AC1 → #005596`) no alcanza AA con texto blanco en sus dos
+  primeras paradas (2.84:1 y 3.88:1), así que se reserva para superficies
+  decorativas (`.bg-brand-gradient-bright`). Toda superficie con texto usa
+  `.bg-brand-gradient`, una versión profunda cuyas paradas superan 5.4:1.
 - Cuerpo de texto en 17px, objetivos táctiles de 48px mínimo, foco visible en todo el sitio.
 - Jerarquía de encabezados correcta, `alt` en imágenes, link "Saltar al contenido".
-- Los niveles de atención usan `<details>/<summary>` nativo: funciona sin JavaScript.
 - `prefers-reduced-motion` respetado: sin animaciones si el usuario las desactivó.
 - Sin librerías de animación ni de íconos: los SVG son propios y el JS del cliente es mínimo.
 

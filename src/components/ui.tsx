@@ -3,7 +3,10 @@ import type { ReactNode } from "react";
 
 /* ---------------------------------------------------------------
    Primitivas de layout y de marca compartidas por todas las secciones.
+   Lenguaje visual del brochure: bloques de color con texto blanco,
+   tarjetas de borde fino, mucho aire vertical.
    --------------------------------------------------------------- */
+
 
 export function Container({
   children,
@@ -43,20 +46,20 @@ export function Section({
 
 export function Eyebrow({
   children,
-  tone = "teal",
+  tone = "brand",
 }: {
   children: ReactNode;
-  tone?: "teal" | "light";
+  tone?: "brand" | "light";
 }) {
   return (
     <p
       className={`mb-4 flex items-center gap-3 text-sm font-semibold tracking-[0.14em] uppercase ${
-        tone === "light" ? "text-ocean-50" : "text-teal-600"
+        tone === "light" ? "text-brand-50" : "text-brand-600"
       }`}
     >
       <span
         aria-hidden="true"
-        className={`h-px w-8 ${tone === "light" ? "bg-ocean-300/70" : "bg-teal-300"}`}
+        className={`h-px w-8 ${tone === "light" ? "bg-white/60" : "bg-brand-300"}`}
       />
       {children}
     </p>
@@ -98,7 +101,7 @@ export function Lead({
   return (
     <p
       className={`text-lg leading-relaxed sm:text-xl ${
-        tone === "light" ? "text-ocean-50" : "text-ink-soft"
+        tone === "light" ? "text-white/90" : "text-ink-soft"
       } ${className}`}
     >
       {children}
@@ -110,11 +113,12 @@ type ButtonVariant = "primary" | "secondary" | "ghost" | "white";
 
 const buttonStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-teal-600 text-white hover:bg-teal-700 shadow-sm hover:shadow-md active:bg-teal-800",
+    "bg-brand-500 text-white hover:bg-brand-600 shadow-sm hover:shadow-md active:bg-brand-700",
   secondary:
-    "bg-white text-teal-700 ring-1 ring-teal-300 hover:bg-teal-50 hover:ring-teal-400",
-  ghost: "text-teal-700 hover:bg-teal-50",
-  white: "bg-white text-ocean-700 hover:bg-ocean-50 shadow-sm hover:shadow-md",
+    "bg-white text-brand-700 ring-1 ring-brand-300 hover:bg-brand-50 hover:ring-brand-400",
+  ghost: "text-brand-700 hover:bg-brand-50",
+  white:
+    "bg-white text-brand-700 hover:bg-brand-50 shadow-sm hover:shadow-md",
 };
 
 /** CTA táctil: mínimo 48px de alto, transición 200ms, foco visible. */
@@ -174,14 +178,14 @@ export function Card({
 
 export function IconBadge({
   children,
-  tone = "teal",
+  tone = "brand",
 }: {
   children: ReactNode;
-  tone?: "teal" | "ocean" | "light";
+  tone?: "brand" | "deep" | "light";
 }) {
   const tones = {
-    teal: "bg-teal-50 text-teal-700",
-    ocean: "bg-ocean-50 text-ocean-700",
+    brand: "bg-brand-50 text-brand-600",
+    deep: "bg-brand-100 text-brand-700",
     light: "bg-white/15 text-white",
   };
   return (

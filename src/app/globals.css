@@ -2,41 +2,33 @@
 
 /* =========================================================
    Helfen — Design tokens
-   Brand: teal primary, deep-blue gradient, white dominant.
+   Brand: azul institucional (#018AC1 / #01A5D9 / #005596),
+   blanco dominante, bloques de color con texto blanco (ref. brochure).
    Audiencia: adultos mayores y familiares → tipografía grande,
    contraste alto (WCAG AA+), cero ruido visual.
    ========================================================= */
 
 @theme {
-  /* Brand — teal */
-  --color-teal-50: #f1f7f7;
-  --color-teal-100: #dcebec;
-  --color-teal-200: #bcd9da;
-  --color-teal-300: #93c0c2;
-  --color-teal-400: #5c9ea1;
-  --color-teal-500: #4a8b8e;
-  --color-teal-600: #3d7376;
-  --color-teal-700: #345d60;
-  --color-teal-800: #2d4d4f;
-  --color-teal-900: #274143;
+  /* Brand — azul Helfen.
+     500 = #018AC1 (primario) · 400 = #01A5D9 (claro) · 700 = #005596 (profundo) */
+  --color-brand-50: #eef8fd;
+  --color-brand-100: #d5eefa;
+  --color-brand-200: #a9dcf4;
+  --color-brand-300: #6cc6ec;
+  --color-brand-400: #01a5d9;
+  --color-brand-500: #018ac1;
+  --color-brand-600: #0170a4;
+  --color-brand-700: #005596;
+  --color-brand-800: #04477a;
+  --color-brand-900: #073a61;
+  --color-brand-950: #052540;
 
-  /* Brand — deep blue (secciones destacadas / footer) */
-  --color-ocean-50: #eef6fb;
-  --color-ocean-100: #d6e9f4;
-  --color-ocean-200: #b0d4ea;
-  --color-ocean-300: #7cb8dc;
-  --color-ocean-400: #2e86ab;
-  --color-ocean-500: #226e91;
-  --color-ocean-600: #12507a;
-  --color-ocean-700: #0f4265;
-  --color-ocean-800: #0d3652;
-  --color-ocean-900: #0b2c43;
-
-  /* Neutrales */
-  --color-ink: #2a3133;
-  --color-ink-soft: #55616a;
-  --color-line: #e3ebec;
-  --color-surface: #f7fafa;
+  /* Neutrales fríos */
+  --color-ink: #2c353c;
+  --color-ink-soft: #3f4a52;
+  --color-ink-muted: #64707a;
+  --color-line: #e2e8ed;
+  --color-surface: #f5f9fc;
 
   /* Tipografía */
   --font-display: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
@@ -56,7 +48,7 @@
 
   body {
     background-color: #ffffff;
-    color: var(--color-ink);
+    color: var(--color-ink-soft);
     font-family: var(--font-sans);
     /* Base 17px: legibilidad para adultos mayores */
     font-size: 1.0625rem;
@@ -69,7 +61,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    color: var(--color-teal-900);
+    color: var(--color-ink);
     letter-spacing: -0.02em;
     text-wrap: balance;
   }
@@ -80,18 +72,40 @@
 
   /* Foco visible y consistente en todo el sitio */
   :focus-visible {
-    outline: 3px solid var(--color-teal-400);
+    outline: 3px solid var(--color-brand-400);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background-color: var(--color-teal-200);
-    color: var(--color-teal-900);
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
   }
 }
 
 @layer components {
+  /* -------------------------------------------------------------
+     Degradés de marca.
+
+     El degradé de marca original (#01A5D9 → #018AC1 → #005596) no
+     alcanza contraste AA con texto blanco en sus dos primeras paradas
+     (2.84:1 y 3.88:1 sobre 4.5:1 requerido). Por eso se separan dos
+     usos:
+
+     · .bg-brand-gradient       — versión profunda, para toda superficie
+       que lleve texto. Todas sus paradas superan 5.4:1 en blanco.
+     · .bg-brand-gradient-bright — degradé de marca exacto, reservado a
+       elementos decorativos sin texto (tiles de ícono, fondo del hero
+       con velo oscuro encima).
+     ------------------------------------------------------------- */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #0170a4 0%, #005596 55%, #044a80 100%);
+  }
+
+  .bg-brand-gradient-bright {
+    background: linear-gradient(135deg, #01a5d9 0%, #018ac1 50%, #005596 100%);
+  }
+
   /* Reveal on scroll — mejora progresiva.
      Sin JS o con reduced-motion el contenido queda visible. */
   .reveal {

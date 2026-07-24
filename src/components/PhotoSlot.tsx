@@ -44,17 +44,17 @@ export default function PhotoSlot({
     <div
       role="img"
       aria-label={alt}
-      className={`relative overflow-hidden bg-gradient-to-br from-teal-100 via-teal-50 to-ocean-100 ${className}`}
+      className={`relative overflow-hidden bg-gradient-to-br from-brand-100 via-brand-50 to-brand-200 ${className}`}
     >
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.55]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 22% 18%, rgba(92,158,161,0.28), transparent 55%), radial-gradient(circle at 82% 78%, rgba(46,134,171,0.22), transparent 52%)",
+            "radial-gradient(circle at 22% 18%, rgba(1,165,217,0.28), transparent 55%), radial-gradient(circle at 82% 78%, rgba(0,85,150,0.22), transparent 52%)",
         }}
       />
-      <div className="absolute inset-0 flex items-center justify-center p-10 text-teal-600/70">
+      <div className="absolute inset-0 flex items-center justify-center p-10 text-brand-600/70">
         {illustration ?? <DefaultIllustration />}
       </div>
     </div>
