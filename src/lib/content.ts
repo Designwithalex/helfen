@@ -150,6 +150,17 @@ export const tranquilidad = {
   ],
 } as const;
 
+/** Opciones del formulario de contacto. Compartidas por el form y la API. */
+export const serviciosFormulario = [
+  "Cuidador / Acompañante de Salud",
+  "Acompañante Terapéutico",
+  "Auxiliar de Enfermería",
+  "Enfermero Profesional",
+  "Cuidados paliativos",
+  "Servicios corporativos",
+  "No lo sé todavía / Necesito asesoramiento",
+] as const;
+
 export const paliativos = {
   titulo: "Cuidados Paliativos",
   texto:

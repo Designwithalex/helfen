@@ -47,6 +47,7 @@ Requiere Node.js 20 o superior.
 ```
 src/
 ├─ app/
+│  ├─ api/contacto/route.ts  # endpoint del formulario (envía el email)
 │  ├─ layout.tsx        # metadata SEO/OG, fuentes, header, footer, botón flotante
 │  ├─ page.tsx          # composición de la home + JSON-LD (MedicalBusiness)
 │  ├─ globals.css       # tokens de marca: color, tipografía, motion
@@ -67,7 +68,7 @@ src/
 │     ├─ Beneficios.tsx    # 4 beneficios de la internación domiciliaria
 │     ├─ Valores.tsx       # integridad · respeto · compromiso · cuidado
 │     ├─ Metodo.tsx        # capacitación permanente + cuidado integral
-│     └─ Contacto.tsx      # contacto mínimo (WhatsApp, email, domicilio)
+│     └─ Contacto.tsx      # formulario + WhatsApp, email y domicilio
 └─ lib/
    ├─ site.ts           # ⭐ datos de contacto, habilitaciones y navegación
    └─ content.ts        # ⭐ copy institucional — transcripción textual del brochure
@@ -122,6 +123,53 @@ Mantener siempre un `alt` descriptivo en español.
 transparente — la única variante disponible. Por eso el lockup (símbolo +
 "Helfen" + claim) se usa siempre sobre fondo turquesa: header, hero y footer.
 Si aparece una variante en color, agregarla y extender `src/components/Logo.tsx`.
+
+---
+
+## Formulario de contacto
+
+El formulario envía la consulta **por email** a la casilla de Helfen a través
+de `POST /api/contacto` (Route Handler, runtime Node). La API key vive sólo en
+el servidor: nunca llega al bundle del cliente.
+
+### Puesta en marcha
+
+1. Crear una API key en <https://resend.com/api-keys>.
+2. Verificar el dominio en <https://resend.com/domains> para poder enviar
+   desde `contacto@helfensalud.com`. Para probar sin verificar, usar el
+   remitente `Helfen <onboarding@resend.dev>`.
+3. Copiar `.env.example` a `.env.local` y completar las variables.
+4. En producción, cargar las mismas variables en el hosting
+   (Vercel → *Settings* → *Environment Variables*).
+
+| Variable | Obligatoria | Para qué |
+|---|---|---|
+| `RESEND_API_KEY` | sí | Autenticación con Resend |
+| `CONTACTO_TO` | no | Destinatario (por defecto `site.email`) |
+| `CONTACTO_FROM` | no | Remitente verificado |
+
+**Sin `RESEND_API_KEY` el endpoint responde 503** y el formulario muestra el
+error con un botón de WhatsApp: nunca se pierde el contacto en silencio.
+
+### Comportamiento
+
+- Validación en el cliente (respuesta inmediata) **y** en el servidor
+  (no se confía en el cliente). Los errores se marcan con `aria-invalid` +
+  `aria-describedby` y el foco salta al primer campo con problema.
+- **Honeypot** (`empresa`, oculto y `aria-hidden`): si viene completo se
+  responde 200 sin enviar nada, para no darle señal al bot.
+- El `servicio` se valida contra la lista blanca de `serviciosFormulario`
+  (`src/lib/content.ts`), compartida entre el form y la API.
+- Los valores se escapan antes de armar el HTML del mail.
+- `reply_to` apunta al email del consultante: responder en el cliente de
+  correo le llega directo.
+
+### Cambiar de proveedor
+
+Toda la integración está en la función `enviarEmail` de
+`src/app/api/contacto/route.ts`. Para pasar a Formspree, Web3Forms o SMTP,
+se reemplaza esa función: la validación y el contrato con el cliente
+(`{ok}` / `{errores}` / `{error}`) quedan igual.
 
 ---
 
