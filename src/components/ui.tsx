@@ -53,7 +53,7 @@ export function Eyebrow({
   return (
     <p
       className={`mb-4 flex items-center gap-3 text-sm font-semibold tracking-[0.14em] uppercase ${
-        tone === "light" ? "text-brand-50" : "text-brand-600"
+        tone === "light" ? "text-brand-50" : "text-brand-700"
       }`}
     >
       <span
@@ -137,9 +137,9 @@ type ButtonVariant = "primary" | "secondary" | "ghost" | "white";
 
 const buttonStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-500 text-white hover:bg-brand-600 shadow-sm hover:shadow-md active:bg-brand-700",
+    "bg-brand-700 text-white hover:bg-brand-800 shadow-sm hover:shadow-md active:bg-brand-900",
   secondary:
-    "bg-white text-brand-700 ring-1 ring-brand-300 hover:bg-brand-50 hover:ring-brand-400",
+    "bg-white text-brand-700 ring-1 ring-brand-600 hover:bg-brand-50 hover:ring-brand-700",
   ghost: "text-brand-700 hover:bg-brand-50",
   white:
     "bg-white text-brand-700 hover:bg-brand-50 shadow-sm hover:shadow-md",
@@ -208,7 +208,7 @@ export function IconBadge({
   tone?: "brand" | "deep" | "light";
 }) {
   const tones = {
-    brand: "bg-brand-50 text-brand-600",
+    brand: "bg-brand-50 text-brand-700",
     deep: "bg-brand-100 text-brand-700",
     light: "bg-white/15 text-white",
   };

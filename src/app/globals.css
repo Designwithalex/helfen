@@ -2,33 +2,39 @@
 
 /* =========================================================
    Helfen — Design tokens
-   Brand: azul institucional (#018AC1 / #01A5D9 / #005596),
-   blanco dominante, bloques de color con texto blanco (ref. brochure).
+   Brand: turquesa institucional #5EB1B9 (tono del brochure),
+   blanco dominante, bloques de color con texto blanco.
    Audiencia: adultos mayores y familiares → tipografía grande,
    contraste alto (WCAG AA+), cero ruido visual.
    ========================================================= */
 
 @theme {
-  /* Brand — azul Helfen.
-     500 = #018AC1 (primario) · 400 = #01A5D9 (claro) · 700 = #005596 (profundo) */
-  --color-brand-50: #eef8fd;
-  --color-brand-100: #d5eefa;
-  --color-brand-200: #a9dcf4;
-  --color-brand-300: #6cc6ec;
-  --color-brand-400: #01a5d9;
-  --color-brand-500: #018ac1;
-  --color-brand-600: #0170a4;
-  --color-brand-700: #005596;
-  --color-brand-800: #04477a;
-  --color-brand-900: #073a61;
-  --color-brand-950: #052540;
+  /* Brand — turquesa Helfen, escala derivada de #5EB1B9 (hue 185°).
 
-  /* Neutrales fríos */
-  --color-ink: #2c353c;
+     500 = #5EB1B9, el color de marca. Es un tono CLARO: da 5.03:1 con
+     texto oscuro pero sólo 2.48:1 con blanco. Por eso:
+       · 50–500  → fondos suaves, bordes, rellenos decorativos, íconos
+                   sobre claro. Nunca texto blanco encima.
+       · 700–950 → superficies con texto blanco (≥4.9:1).
+       · 700+    → texto de marca sobre blanco (≥4.9:1). */
+  --color-brand-50: #f2f9fa;
+  --color-brand-100: #e0f1f3;
+  --color-brand-200: #c0e2e5;
+  --color-brand-300: #96cdd2;
+  --color-brand-400: #7abec5;
+  --color-brand-500: #5eb1b9;
+  --color-brand-600: #3e97a0;
+  --color-brand-700: #2e7b82;
+  --color-brand-800: #256167;
+  --color-brand-900: #1e4b4f;
+  --color-brand-950: #133235;
+
+  /* Neutrales, matizados hacia el turquesa de marca */
+  --color-ink: #26332f;
   --color-ink-soft: #3f4a52;
   --color-ink-muted: #64707a;
-  --color-line: #e2e8ed;
-  --color-surface: #f5f9fc;
+  --color-line: #dde9ea;
+  --color-surface: #f2f9fa;
 
   /* Tipografía */
   --font-display: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
@@ -87,23 +93,21 @@
   /* -------------------------------------------------------------
      Degradés de marca.
 
-     El degradé de marca original (#01A5D9 → #018AC1 → #005596) no
-     alcanza contraste AA con texto blanco en sus dos primeras paradas
-     (2.84:1 y 3.88:1 sobre 4.5:1 requerido). Por eso se separan dos
-     usos:
+     #5EB1B9 es un turquesa claro: con texto blanco da 2.48:1, muy por
+     debajo del 4.5:1 que pide AA (ni siquiera llega al 3:1 de texto
+     grande). Por eso se separan dos usos:
 
-     · .bg-brand-gradient       — versión profunda, para toda superficie
-       que lleve texto. Todas sus paradas superan 5.4:1 en blanco.
-     · .bg-brand-gradient-bright — degradé de marca exacto, reservado a
-       elementos decorativos sin texto (tiles de ícono, fondo del hero
-       con velo oscuro encima).
+     · .bg-brand-gradient       — versión profunda del mismo tono, para
+       toda superficie que lleve texto blanco (≥4.9:1).
+     · .bg-brand-gradient-bright — el turquesa de marca en su rango
+       natural, para superficies decorativas o con texto oscuro.
      ------------------------------------------------------------- */
   .bg-brand-gradient {
-    background: linear-gradient(135deg, #0170a4 0%, #005596 55%, #044a80 100%);
+    background: linear-gradient(135deg, #2e7b82 0%, #256167 55%, #1e4b4f 100%);
   }
 
   .bg-brand-gradient-bright {
-    background: linear-gradient(135deg, #01a5d9 0%, #018ac1 50%, #005596 100%);
+    background: linear-gradient(135deg, #7abec5 0%, #5eb1b9 50%, #3e97a0 100%);
   }
 
   /* Reveal on scroll — mejora progresiva.

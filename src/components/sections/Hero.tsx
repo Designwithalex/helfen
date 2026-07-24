@@ -30,7 +30,7 @@ export default function Hero() {
           blanco por encima de AA sin apagar el azul de marca. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(0,48,86,0.62)_0%,rgba(0,48,86,0.42)_45%,rgba(0,48,86,0.12)_78%,transparent_100%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(19,50,53,0.66)_0%,rgba(19,50,53,0.46)_45%,rgba(19,50,53,0.14)_78%,transparent_100%)]"
       />
 
       <Container>

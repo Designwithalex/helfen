@@ -45,13 +45,13 @@ export default function Niveles() {
             <li className="rounded-2xl border border-line bg-white p-7 sm:p-8">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
                 <span
-                  className="bg-brand-gradient-bright inline-flex size-14 shrink-0 items-center justify-center rounded-2xl text-white"
+                  className="bg-brand-gradient inline-flex size-14 shrink-0 items-center justify-center rounded-2xl text-white"
                   aria-hidden="true"
                 >
                   {iconos[i]}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold tracking-[0.14em] text-brand-500 uppercase">
+                  <p className="text-sm font-semibold tracking-[0.14em] text-brand-700 uppercase">
                     Nivel {i + 1}
                   </p>
                   <h3 className="mt-1.5 text-xl font-semibold sm:text-2xl">

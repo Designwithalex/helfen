@@ -9,7 +9,7 @@ cero ruido visual y contacto por WhatsApp siempre a un toque.
 
 El contenido y el lenguaje visual replican el **brochure institucional** de Helfen:
 bloques de color con texto blanco, tarjetas de borde fino, íconos de línea y mucho aire
-vertical. La identidad es **azul** (`#018AC1` / `#01A5D9` / `#005596`).
+vertical. La identidad es **turquesa** `#5EB1B9`, el tono de las láminas del brochure.
 
 ---
 
@@ -67,7 +67,7 @@ src/
 │     ├─ Beneficios.tsx    # 4 beneficios de la internación domiciliaria
 │     ├─ Valores.tsx       # integridad · respeto · compromiso · cuidado
 │     ├─ Metodo.tsx        # capacitación permanente + cuidado integral
-│     └─ Contacto.tsx      # contacto mínimo (WhatsApp, teléfono, email)
+│     └─ Contacto.tsx      # contacto mínimo (WhatsApp, email, domicilio)
 └─ lib/
    ├─ site.ts           # ⭐ datos de contacto, habilitaciones y navegación
    └─ content.ts        # ⭐ copy institucional — transcripción textual del brochure
@@ -87,7 +87,7 @@ necesita ancla, agregarla a `nav` en `src/lib/site.ts`.
 
 ### Cambiar datos de contacto
 
-Todo (teléfono, WhatsApp, email, dirección, habilitaciones, menú) sale de
+Todo (WhatsApp, email, domicilio, habilitaciones, menú) sale de
 **`src/lib/site.ts`**. Al editar ese archivo se actualizan header, footer, CTAs,
 metadata y datos estructurados.
 
@@ -120,7 +120,7 @@ Mantener siempre un `alt` descriptivo en español.
 
 `public/logo-helfen-blanco.png` es el símbolo institucional en blanco sobre
 transparente — la única variante disponible. Por eso el lockup (símbolo +
-"Helfen" + claim) se usa siempre sobre fondo azul: header, hero y footer.
+"Helfen" + claim) se usa siempre sobre fondo turquesa: header, hero y footer.
 Si aparece una variante en color, agregarla y extender `src/components/Logo.tsx`.
 
 ---
@@ -128,11 +128,14 @@ Si aparece una variante en color, agregarla y extender `src/components/Logo.tsx`
 ## Accesibilidad y performance
 
 - Contraste verificado contra **WCAG 2.1 AA** (texto ≥ 4.5:1, elementos de UI ≥ 3:1).
-- **Dos degradés de marca** (ver `globals.css`): el degradé original
-  (`#01A5D9 → #018AC1 → #005596`) no alcanza AA con texto blanco en sus dos
-  primeras paradas (2.84:1 y 3.88:1), así que se reserva para superficies
-  decorativas (`.bg-brand-gradient-bright`). Toda superficie con texto usa
-  `.bg-brand-gradient`, una versión profunda cuyas paradas superan 5.4:1.
+- **Dos degradés de marca** (ver `globals.css`): `#5EB1B9` es un turquesa
+  claro — da 5.03:1 con texto oscuro pero sólo **2.48:1 con blanco**, por
+  debajo incluso del 3:1 de texto grande. Por eso queda en
+  `.bg-brand-gradient-bright`, para superficies decorativas o con texto
+  oscuro. Toda superficie con texto blanco usa `.bg-brand-gradient`
+  (`#2E7B82 → #256167 → #1E4B4F`), cuyas paradas superan 4.9:1.
+- Regla de la escala: **50–500** sólo para fondos, bordes y rellenos;
+  **700+** para texto de marca sobre blanco y para fondos con texto blanco.
 - Cuerpo de texto en 17px, objetivos táctiles de 48px mínimo, foco visible en todo el sitio.
 - Jerarquía de encabezados correcta, `alt` en imágenes, link "Saltar al contenido".
 - `prefers-reduced-motion` respetado: sin animaciones si el usuario las desactivó.
@@ -174,7 +177,7 @@ el DNS según las instrucciones del panel. Después actualizar `site.url` en
 
 **Cuidados Especiales en Salud S.A.**
 Enrique Santos Discépolo 1859, Piso 2 — 1051, CABA, Argentina
-Tel. 54 11 6019.1111 · WhatsApp +54 9 11 3299-0001
+WhatsApp +54 9 11 3299-0001
 info@cuidadosespecialesensalud.com
 
 Habilitaciones: Ministerio de Salud de la Nación · GCBA Disposición N° 2943/2016 ·

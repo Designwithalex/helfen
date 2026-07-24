@@ -14,7 +14,7 @@ export default function Metodo() {
         <Reveal>
           <article className="h-full rounded-3xl border border-line bg-white p-8 sm:p-10">
             <span
-              className="inline-flex size-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600"
+              className="inline-flex size-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700"
               aria-hidden="true"
             >
               <IconSparkle className="size-7" />

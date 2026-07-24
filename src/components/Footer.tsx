@@ -1,6 +1,6 @@
 import { Container } from "./ui";
 import { Logo } from "./Logo";
-import { IconWhatsApp, IconShield, IconPhone, IconMail } from "./icons";
+import { IconWhatsApp, IconShield, IconMail, IconMapPin } from "./icons";
 import { site, nav, habilitaciones, whatsappLink } from "@/lib/site";
 
 export default function Footer() {
@@ -56,22 +56,21 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex gap-3">
-                <IconPhone className="mt-0.5 size-5 shrink-0 text-brand-300" />
-                <a
-                  href={site.phone.href}
-                  className="cursor-pointer underline-offset-4 transition-colors duration-200 hover:text-white hover:underline"
-                >
-                  {site.phone.display}
-                </a>
-              </li>
-              <li className="flex gap-3">
                 <IconMail className="mt-0.5 size-5 shrink-0 text-brand-300" />
                 <a
                   href={`mailto:${site.email}`}
-                  className="cursor-pointer break-all underline-offset-4 transition-colors duration-200 hover:text-white hover:underline"
+                  className="cursor-pointer break-words underline-offset-4 transition-colors duration-200 hover:text-white hover:underline"
                 >
                   {site.email}
                 </a>
+              </li>
+              <li className="flex gap-3">
+                <IconMapPin className="mt-0.5 size-5 shrink-0 text-brand-300" />
+                <span>
+                  {site.address.street}
+                  <br />
+                  {site.address.postalCode} — {site.address.locality}
+                </span>
               </li>
             </ul>
           </div>

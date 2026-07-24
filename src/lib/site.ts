@@ -10,15 +10,17 @@ export const site = {
   url: "https://helfensalud.com",
   description:
     "Cuidados e internación domiciliaria en CABA y GBA: enfermería profesional, acompañamiento terapéutico, cuidadores y cuidados paliativos. Empresa habilitada por el Ministerio de Salud de la Nación.",
+  /* Domicilio comercial. ⚠️ Proviene del sitio anterior de Helfen: el
+     brochure no incluye dirección en ninguna de sus 15 páginas.
+     Confirmar con el cliente antes de publicar. */
   address: {
     street: "Enrique Santos Discépolo 1859, Piso 2",
     locality: "Ciudad Autónoma de Buenos Aires",
     postalCode: "1051",
     country: "Argentina",
-  },
-  phone: {
-    display: "+54 11 6019 1111",
-    href: "tel:+541160191111",
+    /** Una línea, para mostrar en contacto y footer. */
+    display:
+      "Enrique Santos Discépolo 1859, Piso 2 — Ciudad Autónoma de Buenos Aires",
   },
   whatsapp: {
     display: "+54 9 11 3299-0001",

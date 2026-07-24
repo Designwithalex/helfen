@@ -44,7 +44,7 @@ export default function HelfenView() {
           <div className="mt-14 rounded-3xl bg-white p-8 sm:p-12">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
               <span
-                className="bg-brand-gradient-bright inline-flex size-14 shrink-0 items-center justify-center rounded-2xl text-white"
+                className="bg-brand-gradient inline-flex size-14 shrink-0 items-center justify-center rounded-2xl text-white"
                 aria-hidden="true"
               >
                 <IconMonitor className="size-7" />

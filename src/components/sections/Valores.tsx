@@ -30,7 +30,7 @@ export default function Valores() {
               >
                 {iconos[i]}
               </span>
-              <h3 className="mt-6 text-xl font-semibold tracking-wide text-brand-500">
+              <h3 className="mt-6 text-xl font-semibold tracking-wide text-brand-700">
                 {v.titulo}
               </h3>
               <p className="mt-3 text-ink-soft">{v.texto}</p>

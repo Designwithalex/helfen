@@ -20,7 +20,7 @@ const jsonLd = {
   slogan: site.tagline,
   description: site.description,
   url: site.url,
-  telephone: site.phone.display,
+  telephone: site.whatsapp.display,
   email: site.email,
   address: {
     "@type": "PostalAddress",

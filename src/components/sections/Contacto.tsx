@@ -1,5 +1,5 @@
 import { Container, Eyebrow, SectionTitle, Lead } from "../ui";
-import { IconWhatsApp, IconPhone, IconMail } from "../icons";
+import { IconWhatsApp, IconMail, IconMapPin } from "../icons";
 import Reveal from "../Reveal";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -56,20 +56,6 @@ export default function Contacto() {
             </li>
             <li>
               <a
-                href={site.phone.href}
-                className="flex h-full cursor-pointer flex-col items-center gap-3 rounded-2xl bg-white/10 p-6 text-center ring-1 ring-white/25 transition-colors duration-200 hover:bg-white/20"
-              >
-                <IconPhone className="size-6 text-white" />
-                <span className="text-sm tracking-wide text-white/80 uppercase">
-                  Teléfono
-                </span>
-                <span className="font-semibold text-white">
-                  {site.phone.display}
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
                 href={`mailto:${site.email}`}
                 className="flex h-full cursor-pointer flex-col items-center gap-3 rounded-2xl bg-white/10 p-6 text-center ring-1 ring-white/25 transition-colors duration-200 hover:bg-white/20"
               >
@@ -81,6 +67,17 @@ export default function Contacto() {
                   {site.email}
                 </span>
               </a>
+            </li>
+            <li className="flex h-full flex-col items-center gap-3 rounded-2xl bg-white/10 p-6 text-center ring-1 ring-white/25">
+              <IconMapPin className="size-6 text-white" />
+              <span className="text-sm tracking-wide text-white/80 uppercase">
+                Domicilio
+              </span>
+              <span className="text-sm leading-snug font-semibold text-white">
+                {site.address.street}
+                <br />
+                {site.address.locality}
+              </span>
             </li>
           </ul>
         </Reveal>
