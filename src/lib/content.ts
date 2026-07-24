@@ -1,13 +1,6 @@
 /**
  * Copy institucional — transcripción textual del brochure de Helfen.
  * No editar sin validar contra el PDF: el texto es verbatim.
- *
- * El archivo conserva también el copy de las secciones que hoy NO se
- * muestran en el sitio (ver "Secciones retiradas" al final). Se mantiene
- * transcrito para poder reponerlas sin volver al PDF.
- *
- * En uso:      intro · beneficios · valores · capacitacion · tranquilidad
- * Retiradas:   niveles · gruposServicios · notasServicios · tecnologia · paliativos
  */
 
 export const intro = {
@@ -27,39 +20,6 @@ export const beneficios = [
   "Mantener la rutina y equilibrio diario en el hogar.",
   "Estar rodeado de familiares y afectos disponiendo ambos de tiempo de calidad para compartir.",
 ] as const;
-
-export const valores = [
-  { titulo: "INTEGRIDAD", texto: "Siempre hacer lo correcto." },
-  { titulo: "RESPETO", texto: "Todo el mundo lo merece." },
-  {
-    titulo: "COMPROMISO",
-    texto: "Nos preocupamos día a día en superar las expectativas.",
-  },
-  { titulo: "CUIDADO", texto: "Ponemos nuestro corazón en el trabajo." },
-] as const;
-
-export const capacitacion = {
-  titulo: "Capacitación permanente",
-  texto:
-    "Organizamos regularmente jornadas de perfeccionamiento para nuestro personal en centros terciarios y universitarios de excelencia, ya sean propios o bien de nuestros socios estratégicos en la materia.",
-} as const;
-
-export const tranquilidad = {
-  titulo: "La tranquilidad de un cuidado integral",
-  parrafos: [
-    "El método aplicado le hará sentir la tranquilidad de estar realizando el máximo esfuerzo humanamente posible para optimizar la calidad de vida y demás cuidados que su ser querido pueda recibir.",
-    "Ya no tendrá que preocuparse por ausencias; vacaciones; capacitación; actualización; riesgos laborales —entre otros— por cuanto podrá flexibilizar la dotación convenientemente acorde a las necesidades de demanda que en cada momento correspondan.",
-  ],
-} as const;
-
-/* =========================================================
-   Secciones retiradas del sitio
-   ---------------------------------------------------------
-   Copy transcrito del brochure que hoy no se renderiza.
-   Para reponer una sección: crear el componente en
-   src/components/sections/, sumarlo a src/app/page.tsx y,
-   si necesita ancla, agregarla a `nav` en src/lib/site.ts.
-   ========================================================= */
 
 export const niveles = [
   {
@@ -155,6 +115,16 @@ export const notasServicios = [
   "(**) Tratamiento integral de las necesidades del adulto en el hogar.",
 ] as const;
 
+export const valores = [
+  { titulo: "INTEGRIDAD", texto: "Siempre hacer lo correcto." },
+  { titulo: "RESPETO", texto: "Todo el mundo lo merece." },
+  {
+    titulo: "COMPROMISO",
+    texto: "Nos preocupamos día a día en superar las expectativas.",
+  },
+  { titulo: "CUIDADO", texto: "Ponemos nuestro corazón en el trabajo." },
+] as const;
+
 export const tecnologia = {
   titulo: "Tecnología al servicio del cuidado",
   parrafos: [
@@ -164,6 +134,20 @@ export const tecnologia = {
   /* Párrafo que introduce la marca Helfen View®. */
   destacado:
     "Si bien el contacto humano presencial ha resultado desde siempre el óptimo, ya sea como complemento de ello o bien en los casos en que la presencia física se torna imposible, nuestro exclusivo sistema propietario de seguimiento digital y remoto nos permite mantenerlo a usted junto a todo el equipo profesional a cargo, informados en tiempo real de cualquier novedad ocurrida con el paciente, al tiempo de —solo en los casos autorizados por el responsable a cargo— el monitoreo (visual y/o auditivo) mediante cámaras especialmente instaladas al efecto, vinculadas a nuestro sistema Helfen View®.",
+} as const;
+
+export const capacitacion = {
+  titulo: "Capacitación permanente",
+  texto:
+    "Organizamos regularmente jornadas de perfeccionamiento para nuestro personal en centros terciarios y universitarios de excelencia, ya sean propios o bien de nuestros socios estratégicos en la materia.",
+} as const;
+
+export const tranquilidad = {
+  titulo: "La tranquilidad de un cuidado integral",
+  parrafos: [
+    "El método aplicado le hará sentir la tranquilidad de estar realizando el máximo esfuerzo humanamente posible para optimizar la calidad de vida y demás cuidados que su ser querido pueda recibir.",
+    "Ya no tendrá que preocuparse por ausencias; vacaciones; capacitación; actualización; riesgos laborales —entre otros— por cuanto podrá flexibilizar la dotación convenientemente acorde a las necesidades de demanda que en cada momento correspondan.",
+  ],
 } as const;
 
 export const paliativos = {

@@ -1,10 +1,15 @@
 import Hero from "@/components/sections/Hero";
 import Intro from "@/components/sections/Intro";
 import Beneficios from "@/components/sections/Beneficios";
+import Niveles from "@/components/sections/Niveles";
+import Servicios from "@/components/sections/Servicios";
 import Valores from "@/components/sections/Valores";
+import HelfenView from "@/components/sections/HelfenView";
 import Metodo from "@/components/sections/Metodo";
+import Paliativos from "@/components/sections/Paliativos";
 import Contacto from "@/components/sections/Contacto";
 import { site, habilitaciones } from "@/lib/site";
+import { gruposServicios } from "@/lib/content";
 
 /** Datos estructurados para SEO local. */
 const jsonLd = {
@@ -30,6 +35,9 @@ const jsonLd = {
   ],
   hasCredential: habilitaciones.map((h) => `${h.entidad} — ${h.detalle}`),
   medicalSpecialty: ["Nursing", "PalliativeCare", "Physiotherapy", "Psychiatric"],
+  availableService: gruposServicios
+    .find((g) => g.titulo === "Tipos de Servicio")
+    ?.items.map((item) => ({ "@type": "MedicalTherapy", name: item })),
 };
 
 export default function Home() {
@@ -42,8 +50,12 @@ export default function Home() {
       <Hero />
       <Intro />
       <Beneficios />
+      <Niveles />
+      <Servicios />
       <Valores />
+      <HelfenView />
       <Metodo />
+      <Paliativos />
       <Contacto />
     </>
   );

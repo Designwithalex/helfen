@@ -7,7 +7,6 @@ import type { ReactNode } from "react";
    tarjetas de borde fino, mucho aire vertical.
    --------------------------------------------------------------- */
 
-
 export function Container({
   children,
   className = "",
@@ -86,6 +85,31 @@ export function SectionTitle({
     >
       {children}
     </h2>
+  );
+}
+
+/**
+ * Encabezado en bloque de color — el recurso gráfico característico del
+ * brochure ("Servicios Corporativos", "Especialidades", …).
+ */
+export function BlockHeading({
+  id,
+  children,
+  as: Tag = "h3",
+  className = "",
+}: {
+  id?: string;
+  children: ReactNode;
+  as?: "h2" | "h3";
+  className?: string;
+}) {
+  return (
+    <Tag
+      id={id}
+      className={`bg-brand-gradient rounded-lg px-6 py-3.5 text-center text-xl font-semibold text-white sm:text-2xl ${className}`}
+    >
+      {children}
+    </Tag>
   );
 }
 

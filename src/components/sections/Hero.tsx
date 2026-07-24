@@ -70,10 +70,10 @@ export default function Hero() {
                 Escribinos por WhatsApp
               </ButtonLink>
               <ButtonLink
-                href="#internacion-domiciliaria"
+                href="#servicios"
                 className="w-full bg-white/10 text-white ring-1 ring-white/50 hover:bg-white/20 active:bg-white/25 sm:w-auto"
               >
-                Conocer más
+                Ver servicios
               </ButtonLink>
             </div>
           </Reveal>

@@ -50,8 +50,8 @@ export const habilitaciones = [
 ] as const;
 
 export const nav = [
-  { label: "Cuidados", href: "#internacion-domiciliaria" },
+  { label: "Servicios", href: "#servicios" },
   { label: "Valores", href: "#valores" },
-  { label: "Método", href: "#metodo" },
+  { label: "Tecnología", href: "#tecnologia" },
   { label: "Contacto", href: "#contacto" },
 ] as const;
